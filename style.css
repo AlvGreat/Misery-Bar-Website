@@ -1,0 +1,180 @@
+@font-face {
+  font-family: "Roboto-Bold";
+  src: url("./fonts/Roboto-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto-Regular";
+  src: url("./fonts/Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Lora";
+  src: url("./fonts/Lora-Medium.ttf") format("truetype");
+}
+
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --hover: #6ba6ff;
+  --grey50: rgba(189, 189, 189, 0.6);
+  --transition: all 0.3s ease 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: auto;
+}
+
+body {
+  background: linear-gradient(var(--grey50), var(--grey50)),
+    url(./images/Background.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+p,
+a,
+button {
+  font-family: "Roboto-Regular", sans-serif;
+  color: var(--white);
+  text-decoration: none;
+}
+
+a,
+button,
+.logo {
+  cursor: pointer;
+}
+
+main {
+  height: 100%;
+  display: grid;
+  grid-template-columns: minmax(50px, 1fr) repeat(6, minmax(50px, 190px)) minmax(
+      50px,
+      1fr
+    );
+}
+
+header {
+  grid-column: 2 / span 6;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  height: 120px;
+}
+
+.logo {
+  font-family: "Lora", sans-serif;
+  font-size: 30px;
+  padding: 8px;
+  background-color: rgba(1, 1, 1, 1);
+}
+
+.links {
+  margin-left: auto;
+}
+
+.links a,
+.links button {
+  font-size: 16px;
+  font-family: "Roboto-Bold", sans-serif;
+  transition: var(--transition);
+}
+
+.links a {
+  margin-left: 25px;
+}
+
+.links a:hover {
+  color: var(--hover);
+}
+
+.info {
+  grid-column: 2 / span 4;
+}
+
+.hero__font {
+  color: var(--white);
+  font-family: "Roboto-Regular", sans-serif;
+  font-size: 60px;
+}
+
+.icons {
+  display: flex;
+  margin-top: 50px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+}
+
+.icon__info {
+  margin: 0 80px 0 20px;
+}
+
+.icon__top {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.icon__bottom {
+  font-size: 20px;
+  font-family: "Roboto-Bold", sans-serif;
+}
+
+@media only screen and (max-width: 1000px) {
+  .icon img {
+    height: 55px;
+    width: auto;
+  }
+
+  .icon__top {
+    font-size: 12px;
+  }
+
+  .icon_bottom {
+    font-size: 16px;
+  }
+
+  .hero__font {
+    font-size: 36px;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .info {
+    grid-column: 2 / span 6;
+  }
+
+  .links a {
+    margin-left: 15px;
+  }
+
+  .icons {
+    flex-direction: column;
+  }
+
+  .icon {
+    margin-bottom: 20px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+}
